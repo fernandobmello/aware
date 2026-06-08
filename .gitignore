@@ -1,0 +1,19 @@
+# Data files
+*.sav
+*.xlsx
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+
+# Large originals
+videos/
+
+# Temp
+.DS_Store
+*_cache/
+*_files/

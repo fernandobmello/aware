@@ -1,0 +1,75 @@
+/*-- scss:defaults --*/
+$body-bg: #ffffff;
+$body-color: #222222;
+$link-color: #0000CD;
+$presentation-heading-color: #0000CD;
+$presentation-heading-font-weight: 700;
+$presentation-font-size-root: 32px;
+$presentation-slide-text-align: left;
+$code-color: #0000CD;
+
+/*-- scss:rules --*/
+
+/* Header bar */
+.reveal .slide-menu-button,
+.reveal .slide-number { color: white; }
+
+/* Section title slides */
+.reveal section[data-background-color="#0000CD"] h1,
+.reveal section[data-background-color="#0000CD"] h2 {
+  color: white !important;
+}
+
+/* Footer */
+.reveal .footer {
+  font-size: 0.55em;
+  color: #888888;
+}
+
+/* Logo sizing */
+.reveal .slide-logo {
+  height: 28px !important;
+  max-height: 28px !important;
+}
+
+/* Callout tweaks */
+.callout-note { border-left-color: #0000CD !important; }
+.callout-note .callout-title { background-color: #e8e8ff !important; }
+
+.callout-warning { border-left-color: #B43C00 !important; }
+.callout-warning .callout-title { background-color: #fff0e8 !important; }
+
+.callout-tip { border-left-color: #2A8A2A !important; }
+.callout-tip .callout-title { background-color: #e8f5e8 !important; }
+
+/* Table styling */
+.reveal table {
+  font-size: 0.85em;
+  border-collapse: collapse;
+  width: 100%;
+}
+.reveal table th {
+  background-color: #0000CD;
+  color: white;
+  padding: 6px 10px;
+}
+.reveal table td {
+  padding: 5px 10px;
+  border-bottom: 1px solid #dddddd;
+}
+.reveal table tr:nth-child(even) td {
+  background-color: #f4f4ff;
+}
+
+/* Slide title */
+.reveal h2 {
+  font-size: 1.15em;
+  border-bottom: 2px solid #0000CD;
+  padding-bottom: 4px;
+  margin-bottom: 0.6em;
+}
+
+/* Black background slides */
+section[data-background-color="#111111"] {
+  color: white;
+}

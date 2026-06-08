@@ -212,16 +212,16 @@ Petistas = PT as favourite party (*n* ≈ 1,374); Antipetistas = PT as least fav
 ```{r waves, fig.height=3.0, fig.width=12}
 library(ggplot2)
 waves <- data.frame(
-  wave  = 1:5,
-  label = c("Wave 1","Wave 2","Wave 3","Wave 4","Wave 5"),
-  timing = c("May – Jun","Jun – Jul","Jul – Aug","Aug – Sep","Sep – Oct"),
-  desc  = c("Baseline","No-treatment\ncheck","Video +\nReflection task",
-            "Outcomes\n(incl. behavioral)","Decay"),
-  note  = c("Polarization\nbaseline\nN ≈ 5,000",
-            "Does polarization\nor priorities shift\nwithout treatment?",
-            "Randomized\nby partisan\nblock",
-            "Primary\nbehavioral\noutcome",
-            "Persistence\nof effects")
+  wave   = 1:5,
+  label  = c("Wave 1","Wave 2","Wave 3","Wave 4","Wave 5"),
+  timing = c("May – Jun","Jun – Jul","July","August","Sep – Oct"),
+  desc   = c("Baseline","No-treatment\ncheck","Video 1\n(no outcome)",
+             "Video 2\n+ Outcomes","Decay"),
+  note   = c("Polarization\nbaseline\nN ≈ 6,000",
+             "Does polarization\nor priorities shift\nwithout treatment?",
+             "Randomized\nby partisan\nblock",
+             "Primary\nbehavioral\noutcome",
+             "Persistence\nof effects")
 )
 ggplot(waves) +
   geom_tile(aes(x=wave, y=0.5), width=0.85, height=0.75,
@@ -229,7 +229,7 @@ ggplot(waves) +
   geom_text(aes(x=wave, y=0.78, label=label), color="white",
             fontface="bold", size=3.6) +
   geom_text(aes(x=wave, y=0.55, label=timing), color="#cce0ff", size=2.6) +
-  geom_text(aes(x=wave, y=0.28, label=desc), color="white", size=2.5) +
+  geom_text(aes(x=wave, y=0.27, label=desc), color="white", size=2.5) +
   geom_text(aes(x=wave, y=-0.22, label=note), color="#555555",
             size=2.3, lineheight=0.9) +
   geom_segment(data=data.frame(x=1:4+0.43, xend=1:4+0.57),
@@ -368,13 +368,14 @@ Monte Carlo simulation (4,000 draws per cell) · **3-arm design**: Control, Macr
 
 ---
 
-## Expected Results {background-color="#ffffff"}
+## Expected Results — Concern about Polarization {background-color="#ffffff"}
 
-![](fig_expectations.gif){fig-align="center" width="94%"}
+![](fig_expectations.gif){fig-align="center" width="70%"}
 
 ::: aside
-Simulated data for illustration · Concerns about polarization remain stable across all waves for both groups · Behavioral engagement rises for the treatment group from Wave 3 (first video) and consolidates at Wave 4 · Wave 5 tests persistence of effects
+Simulated data for illustration · Treatment group shows increased concern about polarization from Wave 3 onwards · Control group remains stable around baseline · Effect consolidates at Wave 4 and persists through Wave 5
 :::
+
 
 ---
 

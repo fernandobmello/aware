@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -)",
+      "Bash(pip install *)",
+      "Bash(pip3 install *)",
+      "Bash(pdflatex -interaction=nonstopmode aware-presentation.tex)",
+      "Bash(quarto --version)",
+      "Bash(ls /Applications/ | grep -i quarto; ls ~/Applications/ 2>/dev/null | grep -i quarto; find /usr/local/bin /opt/homebrew/bin -name \"quarto\" 2>/dev/null)",
+      "Bash(find /opt /usr/local /Applications ~/Library -name \"quarto\" -type f 2>/dev/null | head -5)",
+      "Bash(/Applications/RStudio.app/Contents/Resources/app/quarto/bin/quarto render *)",
+      "Bash(wait)",
+      "Bash(open /Users/Mello/Dropbox/publications/aware/aware-presentation.html)",
+      "Bash(grep -n \"video\\\\|mp4\\\\|webm\\\\|autoplay\\\\|controls\\\\|iframe\\\\|youtube\\\\|vimeo\" /Users/Mello/Dropbox/publications/status/experiment_status.html | head -60)",
+      "Bash(ffprobe -v quiet -print_format json -show_streams /Users/Mello/Dropbox/publications/aware/videos/video2.mp4)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); s=[x for x in d['streams'] if x['codec_type']=='video'][0]; print\\(s.get\\('width'\\), s.get\\('height'\\), s.get\\('duration','?'\\)\\)\")",
+      "Bash(quarto render *)",
+      "Bash(/usr/local/bin/quarto render *)",
+      "Bash(which quarto *)",
+      "Bash(ffmpeg -i /Users/Mello/Dropbox/publications/aware/videos/video2.mp4 -vf 'scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:\\(ow-iw\\)/2:\\(oh-ih\\)/2' -c:v libx264 -crf 28 -preset fast -c:a aac -b:a 96k /Users/Mello/Dropbox/publications/aware/videos/video2_small.mp4)",
+      "Bash(ffmpeg -i /Users/Mello/Dropbox/publications/aware/videos/video14.mp4 -vf 'scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:\\(ow-iw\\)/2:\\(oh-ih\\)/2' -c:v libx264 -crf 28 -preset fast -c:a aac -b:a 96k /Users/Mello/Dropbox/publications/aware/videos/video14_small.mp4)",
+      "Bash(pkill -f \"ffmpeg.*video\")",
+      "Bash(pkill -f \"python3 -m http.server 8765\")",
+      "Bash(python3 -m http.server 8765)",
+      "Bash(gh auth *)",
+      "Bash(git config *)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git push *)",
+      "Bash(git commit *)",
+      "Bash(sed -i '' 's/lineheight=1.2,/linespacing=1.2,/' /Users/Mello/Dropbox/publications/aware/make_timeline_gif.py)",
+      "Bash(python3 /Users/Mello/Dropbox/publications/aware/make_timeline_gif.py)"
+    ]
+  }
+}

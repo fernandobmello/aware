@@ -23,7 +23,8 @@ format:
     transition: fade
     transition-speed: fast
     fig-align: center
-    embed-resources: true
+    embed-resources: false
+    self-contained: false
     width: 1280
     height: 720
 ---

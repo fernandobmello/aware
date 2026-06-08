@@ -1,0 +1,215 @@
+% ============================================================
+%  IJL Beamer Template — Madrid theme with Instituto Juan Linz logo
+% ============================================================
+\documentclass[aspectratio=169]{beamer}
+
+% ── Base theme ──────────────────────────────────────────────
+\usetheme{Madrid}
+
+% ── IJL brand colour (deep blue #0000CD / medium blue #1A1AE6) ──
+\definecolor{IJLblue}{RGB}{0, 0, 205}
+
+% Override Madrid palette with IJL blue
+\setbeamercolor{palette primary}   {bg=IJLblue,  fg=white}
+\setbeamercolor{palette secondary} {bg=IJLblue!85!black, fg=white}
+\setbeamercolor{palette tertiary}  {bg=IJLblue!70!black, fg=white}
+\setbeamercolor{palette quaternary}{bg=IJLblue!55!black, fg=white}
+\setbeamercolor{structure}         {fg=IJLblue}
+\setbeamercolor{frametitle}        {bg=IJLblue, fg=white}
+\setbeamercolor{title}             {fg=white}
+\setbeamercolor{author in head/foot}{bg=IJLblue!80!black, fg=white}
+\setbeamercolor{title in head/foot} {bg=IJLblue!60!black, fg=white}
+\setbeamercolor{date in head/foot}  {bg=IJLblue!40!black, fg=white}
+
+% ── Fonts ───────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% ── Graphics & absolute positioning ────────────────────────
+\usepackage{graphicx}
+\usepackage{eso-pic}   % for \AddToShipoutPictureBG
+
+% ── Footer: author | title | frame number  (no logo, no date) ──
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.35\paperwidth, ht=2.5ex, dp=1.125ex,
+        leftskip=.3cm, rightskip=.3cm plus1fil]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.50\paperwidth, ht=2.5ex, dp=1.125ex,
+        leftskip=.3cm, rightskip=.3cm plus1fil]{title in head/foot}%
+      \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.15\paperwidth, ht=2.5ex, dp=1.125ex,
+        leftskip=.3cm, rightskip=.3cm]{date in head/foot}%
+      \usebeamerfont{date in head/foot}%
+      \hfill\insertframenumber{}/\inserttotalframenumber\hspace{0.4em}%
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+% ── Navigation symbols: hide ────────────────────────────────
+\setbeamertemplate{navigation symbols}{}
+
+% ── Logo overlay: bottom-right corner, frames 2 onwards ─────
+%
+%  \AddToShipoutPictureBG* places content in absolute page coordinates
+%  on every page while it is active.  We activate it after \begin{document}
+%  so it skips the title slide (frame 1).
+%
+%  Coordinates (x,y) are measured from the bottom-left of the page.
+%  \paperwidth / \paperheight give the full page size in sp units.
+%  We nudge the logo 0.25 cm from the right and 0.35 cm from the bottom.
+%
+\newcommand{\IJLlogoOverlay}{%
+  \AddToShipoutPictureFG{%
+    \AtPageLowerLeft{%
+      \hspace{\dimexpr\paperwidth-3.8cm\relax}%
+      \raisebox{1.4cm}{%
+        \includegraphics[height=0.9cm]{IJL-largo-ingles.jpg}%
+      }%
+    }%
+  }%
+}
+
+% ============================================================
+%  PRESENTATION METADATA  — edit as needed
+% ============================================================
+\title[Short Title]{Full Presentation Title}
+\subtitle{Optional Subtitle}
+\author[A.~Author]{Author Name}
+\institute[IJL]{%
+  Instituto Juan Linz\\
+  Centro de Investigación y Postgrado en Ciencias Sociales
+}
+\date[Month Year]{Month Year}
+
+% ============================================================
+\begin{document}
+
+% ── Title slide (no logo overlay) ───────────────────────────
+\begin{frame}
+  \titlepage
+  \begin{center}
+    \vspace{0.3em}
+    \includegraphics[height=1.1cm]{IJL-largo-ingles.jpg}
+  \end{center}
+\end{frame}
+
+% ── Activate logo overlay for all subsequent slides ──────────
+\IJLlogoOverlay
+
+% ── Table of contents ───────────────────────────────────────
+\begin{frame}{Contents}
+  \tableofcontents
+\end{frame}
+
+% ============================================================
+%  SAMPLE CONTENT
+% ============================================================
+
+\section{Introduction}
+
+\begin{frame}{Introduction}
+  \begin{itemize}
+    \item First point about the research topic.
+    \item Second point with supporting evidence.
+    \item Third point leading to the research question.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Motivation}
+  \begin{columns}
+    \column{0.5\textwidth}
+      \textbf{Why this matters}
+      \begin{itemize}
+        \item Reason one
+        \item Reason two
+        \item Reason three
+      \end{itemize}
+    \column{0.5\textwidth}
+      \begin{block}{Research Question}
+        What is the relationship between X and Y in the context of Z?
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\section{Data \& Methods}
+
+\begin{frame}{Data}
+  \begin{itemize}
+    \item Data source description.
+    \item Coverage: countries, years, variables.
+    \item Sample size: $N = \ldots$
+  \end{itemize}
+
+  \begin{alertblock}{Note}
+    All data are publicly available from \ldots
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Method}
+  \begin{block}{Model specification}
+    \[
+      Y_{it} = \alpha + \beta_1 X_{it} + \beta_2 Z_{it} + \mu_i + \epsilon_{it}
+    \]
+  \end{block}
+  \vspace{0.5em}
+  \begin{itemize}
+    \item $\mu_i$: country fixed effects.
+    \item Standard errors clustered at the country level.
+  \end{itemize}
+\end{frame}
+
+\section{Results}
+
+\begin{frame}{Main Results}
+  \begin{table}
+    \centering
+    \begin{tabular}{lcc}
+      \hline\hline
+      Variable & Model 1 & Model 2 \\
+      \hline
+      $X$       & 0.32*** & 0.28*** \\
+                & (0.08)  & (0.07)  \\
+      $Z$       &         & 0.15**  \\
+                &         & (0.06)  \\
+      \hline
+      $N$       & 1{,}200 & 1{,}200 \\
+      $R^2$     & 0.41    & 0.47    \\
+      \hline\hline
+    \end{tabular}
+    \caption{Regression results. *** $p<0.01$, ** $p<0.05$.}
+  \end{table}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Conclusion}
+  \begin{enumerate}
+    \item Key finding one.
+    \item Key finding two.
+    \item Policy implication or future research direction.
+  \end{enumerate}
+
+  \vspace{1em}
+  \begin{exampleblock}{Take-away}
+    One sentence summary of the most important result.
+  \end{exampleblock}
+\end{frame}
+
+% ── References placeholder ──────────────────────────────────
+\begin{frame}[allowframebreaks]{References}
+  \bibliographystyle{apalike}
+  % \bibliography{references}   % ← point to your .bib file
+  \begin{thebibliography}{9}
+    \bibitem{example2024}
+      Author, A.\ (2024).
+      \emph{Title of the work}.
+      Journal Name, 10(2), 100--120.
+  \end{thebibliography}
+\end{frame}
+
+\end{document}

@@ -51,54 +51,49 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ::: {.callout-note title="The Puzzle"}
 People **might** be aware of polarization's costs — yet **behavioral change remains elusive**.
 
-Can *framing* those costs trigger action?
+Can *spelling out* those costs trigger action?
 :::
 ::: {.callout-warning title="Our Approach"}
-Two parallel experiments targeting **both** the supply (elites) and demand (citizens) sides simultaneously.
+Panel with **~6,000 voters** embedding experiments using professional videos
 :::
 :::
 ::::
 
-## Theoretical Framework
+## Experimental Design
 
-```{r dag, fig.height=3.4, fig.width=10}
+```{r arms, fig.height=3.2, fig.width=11}
 library(ggplot2)
-library(ggraph)
-library(tidygraph)
 
-nodes <- data.frame(
-  name = c("Treatment\n(Risk Frame)",
-           "Macro costs\nDemocratic · Economic",
-           "Micro costs\nRelational · Social",
-           "Institutional\nresponsibility",
-           "Relational\nnorms",
-           "↑ Behavioral\nengagement\n(citizens)"),
-  x = c(0, 2, 2, 4, 4, 6),
-  y = c(0, 0.8, -0.8, 0.8, -0.8, 0),
-  type = c("treat","macro","micro","mech","mech","out")
+arms <- data.frame(
+  x      = c(1, 3, 5),
+  label  = c("Treatment 1", "Treatment 2", "Control"),
+  sub1   = c("Macro Costs", "Micro Costs", ""),
+  sub2   = c("Democratic · Economic", "Relational · Social", "Nature / museums\n(similar length)"),
+  fill   = c("#0064B4", "#B43C00", "#555555")
 )
-edges <- data.frame(
-  from = c(1,1,2,3,4,5),
-  to   = c(2,3,4,5,6,6)
-)
-g <- tbl_graph(nodes=nodes, edges=edges)
-ggraph(g, layout="manual", x=nodes$x, y=nodes$y) +
-  geom_edge_link(arrow=arrow(length=unit(3,"mm"), type="closed"),
-                 end_cap=circle(7,"mm"), color="#555555", width=0.8) +
-  geom_node_label(aes(label=name, fill=type), size=3.0,
-                  label.padding=unit(0.3,"lines"), color="white",
-                  fontface="bold", label.r=unit(0.3,"lines")) +
-  scale_fill_manual(values=c(treat="#0000CD", macro="#0064B4",
-                              micro="#B43C00", mech="#666666",
-                              out="#2A8A2A")) +
-  annotate("text", x=2, y=1.45, label="RQ: which frame type has larger effects?",
-           size=3, color="#444444", fontface="italic") +
-  theme_void() + theme(legend.position="none") +
-  coord_cartesian(ylim=c(-1.5,1.7))
+
+ggplot(arms) +
+  geom_rect(aes(xmin = x - 0.80, xmax = x + 0.80,
+                ymin = 0.05,     ymax = 0.95,
+                fill = fill), color = "white", linewidth = 1.2) +
+  scale_fill_identity() +
+  geom_text(aes(x = x, y = 0.80, label = label),
+            color = "white", fontface = "bold", size = 5.2) +
+  geom_text(aes(x = x, y = 0.57, label = sub1),
+            color = "white", fontface = "bold", size = 4.2) +
+  geom_text(aes(x = x, y = 0.34, label = sub2),
+            color = "#dddddd", size = 3.5, lineheight = 0.95) +
+  annotate("text", x = 3, y = 1.10,
+           label = "RQ: which frame type produces larger behavioral effects?",
+           size = 3.8, color = "#333333", fontface = "italic") +
+  scale_x_continuous(limits = c(0, 6)) +
+  scale_y_continuous(limits = c(0, 1.2)) +
+  theme_void() +
+  theme(plot.margin = margin(5, 5, 5, 5))
 ```
 
 ::: {.fragment}
-**Key insight:** behavioral change may occur *without* attitudinal depolarization (H7)
+**Key insight:** behavioral change may occur *without* attitudinal depolarization
 :::
 
 ## Study Timeline
@@ -127,7 +122,7 @@ Wave 1 data (May 2026) already collected (*N* ≈ 5,900). Shaded area = official
 - Campaign period: elites actively calibrating rhetoric
 - Citizens exposed to heavy political content
 - Meta ad infrastructure enables direct elite targeting at scale
-- 6-wave panel tracks behavioral decay over time
+- 5-wave panel tracks behavioral decay over time
 :::
 :::
 ::::
@@ -272,38 +267,11 @@ Polarization damages family relationships, causes estrangement and lasting relat
 
 | | |
 |---|---|
-| **Control** | No informational frame; outcome measurement only |
+| **Control** | Apolitical video of similar length (nature, museums) |
 
 ::: aside
 Identical content across survey and field experiments.
 :::
-
-## Treatment Video — Social Conflict {background-color="#111111"}
-
-```{=html}
-<div style="display:flex; justify-content:center; align-items:center; height:80%">
-  <iframe width="960" height="540"
-    src="https://www.youtube.com/embed/bUX8ewmBA60"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</div>
-```
-
-## Treatment Video — Family Conflict {background-color="#111111"}
-
-```{=html}
-<div style="display:flex; justify-content:center; align-items:center; height:80%">
-  <iframe width="960" height="540"
-    src="https://www.youtube.com/embed/d1Q-mwkFoHQ"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</div>
-```
-
 
 ## Primary Behavioral Outcomes
 
@@ -409,7 +377,7 @@ Which type of message — macro (democratic/economic) or micro (social/family) �
 ::: {.column width="48%"}
 **What we are doing**
 
-1. 6-wave panel survey experiment with *N* ≈ 5,000 Brazilian voters
+1. 5-wave panel survey experiment with *N* ≈ 6,000 Brazilian voters
 2. Four informational frames (macro: democratic, economic; micro: social, family)
 3. Behavioral primary outcomes (seminar enrollment, manual download)
 4. Block-randomized by partisan group across three arms (Control, Macro, Micro)

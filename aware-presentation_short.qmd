@@ -59,6 +59,29 @@ Panel with **~6,000 voters** embedding experiments using professional videos
 :::
 ::::
 
+## Context: Brazil 2026
+
+:::: {.columns}
+::: {.column width="48%"}
+**Why Brazil?**
+
+- 2022 election produced record-high polarization between PT and anti-PT camps
+- Presidential race ongoing: Lula vs. Flávio Bolsonaro likely second round
+- WhatsApp is the primary arena for political conflict among ordinary citizens
+- Redes Cordiais — established NGO working on online conflict de-escalation
+:::
+::: {.column width="48%"}
+::: {.fragment}
+**Why this moment?**
+
+- Campaign period: positive and negative partisanship very activated
+- Citizens exposed to heavy political content
+- Still around 1/3 of non-partisans in the country
+- 5-wave panel tracks possible effects over time
+:::
+:::
+::::
+
 ## Experimental Design
 
 ```{r arms, fig.height=3.2, fig.width=11}
@@ -103,29 +126,6 @@ ggplot(arms) +
 ::: aside
 Wave 1 data (May 2026) already collected (*N* ≈ 5,900). Shaded area = official campaign period. Treatment delivered during Waves 3–4 at peak campaign intensity; primary behavioral outcomes measured in Wave 5, two weeks before the first round.
 :::
-
-## Context: Brazil 2026
-
-:::: {.columns}
-::: {.column width="48%"}
-**Why Brazil?**
-
-- 2022 election produced record-high polarization between PT and anti-PT camps
-- Presidential race ongoing: Lula vs. Flávio Bolsonaro likely second round
-- WhatsApp is the primary arena for political conflict among ordinary citizens
-- Redes Cordiais — established NGO working on online conflict de-escalation
-:::
-::: {.column width="48%"}
-::: {.fragment}
-**Why this moment?**
-
-- Campaign period: positive and negative partisanship very activated
-- Citizens exposed to heavy political content
-- Still around 1/3 of non-partisans in the country
-- 5-wave panel tracks possible effects over time
-:::
-:::
-::::
 
 ---
 

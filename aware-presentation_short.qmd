@@ -411,10 +411,12 @@ Concern about polarization is widespread. AWARE tests whether it can be converte
 ```{=html}
 <div style="display:flex; justify-content:center; align-items:center; height:80%">
   <iframe width="960" height="540"
-    src="https://www.youtube.com/embed/d1Q-mwkFoHQ"
+    src="https://www.youtube-nocookie.com/embed/d1Q-mwkFoHQ?rel=0"
+    title="Treatment Video — Family Conflict"
     frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+    allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin">
   </iframe>
 </div>
 ```

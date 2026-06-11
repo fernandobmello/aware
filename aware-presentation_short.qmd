@@ -48,13 +48,17 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 :::
 :::
 ::: {.column width="42%"}
+::: {.fragment}
 ::: {.callout-note title="The Puzzle"}
 People **might** be aware of polarization's costs — yet **behavioral change remains elusive**.
 
 Can *spelling out* those costs trigger action?
 :::
+:::
+::: {.fragment}
 ::: {.callout-warning title="Our Approach"}
 Panel with **~6,000 voters** embedding experiments using professional videos
+:::
 :::
 :::
 ::::

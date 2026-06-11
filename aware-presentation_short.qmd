@@ -1,6 +1,6 @@
 ---
 title: "From Concern to Action"
-subtitle: "Can Highlighting the Dangers of Polarization Increase Citizens' Willingness to Intervene? Evidence from Combined Experiments in Brazil"
+subtitle: "Evidence from Brazil"
 author:
   - name: Fernando B. Mello
     affiliation: UC3M & Instituto Juan Linz

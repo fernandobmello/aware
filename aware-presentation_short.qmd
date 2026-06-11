@@ -86,6 +86,10 @@ Panel with **~6,000 voters** embedding experiments using professional videos
 :::
 ::::
 
+## Context: Brazil 2026
+
+![](zucco.jpg){fig-align="center" width="90%"}
+
 ## Experimental Design
 
 ```{r arms, fig.height=3.2, fig.width=11}

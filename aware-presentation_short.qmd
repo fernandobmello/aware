@@ -403,3 +403,18 @@ Which type of message — macro (democratic/economic) or micro (social/family) �
 ::: {.callout-tip title="Core contribution" style="margin-top:1em"}
 Concern about polarization is widespread. AWARE tests whether it can be converted into action.
 :::
+
+---
+
+## Treatment Video — Family Conflict {background-color="#111111"}
+
+```{=html}
+<div style="display:flex; justify-content:center; align-items:center; height:80%">
+  <iframe width="960" height="540"
+    src="https://www.youtube.com/embed/d1Q-mwkFoHQ"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+```
